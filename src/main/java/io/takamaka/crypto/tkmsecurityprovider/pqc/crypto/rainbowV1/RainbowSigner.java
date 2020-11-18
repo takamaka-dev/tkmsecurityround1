@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package io.takamaka.crypto.tkmsecurityprovider.pqc.crypto.qteslaround1.rainbowV1;
+package io.takamaka.crypto.tkmsecurityprovider.pqc.crypto.rainbowV1;
 
 import io.takamaka.crypto.tkmsecurityprovider.pqc.crypto.qteslaround1.rainbowV1.util.ComputeInField;
 import io.takamaka.crypto.tkmsecurityprovider.pqc.crypto.qteslaround1.rainbowV1.util.GF2Field;

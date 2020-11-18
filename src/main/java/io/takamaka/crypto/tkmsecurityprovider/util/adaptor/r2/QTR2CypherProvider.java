@@ -21,7 +21,7 @@ import org.bouncycastle.util.encoders.UrlBase64;
  */
 public class QTR2CypherProvider {
 
-    public static BCQTESLAPSSC1CypherBeanR2 sign(AsymmetricCipherKeyPair keyPair, String message) {
+    public static final BCQTESLAPSSC1CypherBeanR2 sign(AsymmetricCipherKeyPair keyPair, String message) {
         BCQTESLAPSSC1CypherBeanR2 tcb = new BCQTESLAPSSC1CypherBeanR2();
         tcb.setValid(false);
         try {
@@ -44,7 +44,7 @@ public class QTR2CypherProvider {
         return tcb;
     }
 
-    public static BCQTESLAPSSC1CypherBeanR2 verify(AsymmetricCipherKeyPair keyPair, String signature, String message) {
+    public static final BCQTESLAPSSC1CypherBeanR2 verify(AsymmetricCipherKeyPair keyPair, String signature, String message) {
         BCQTESLAPSSC1CypherBeanR2 tcb = new BCQTESLAPSSC1CypherBeanR2();
         tcb.setValid(false);
         QTESLAPublicKeyParameters publicK = null;
@@ -78,7 +78,7 @@ public class QTR2CypherProvider {
         return tcb;
     }
 
-    public static BCQTESLAPSSC1CypherBeanR2 verify(String publicKey, String signature, String message) {
+    public static final BCQTESLAPSSC1CypherBeanR2 verify(String publicKey, String signature, String message) {
         try {
             AsymmetricCipherKeyPair pkPair;
             ByteArrayOutputStream baos = new ByteArrayOutputStream();

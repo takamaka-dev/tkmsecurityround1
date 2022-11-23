@@ -2,10 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit5TestClass.java to edit this template
  */
-package io.takamaka.crypto.tkmsecurityprovider.util.adaptor.r2;
+package io.takamaka.crypto.tkmsecurityprovider.util.adaptor.r1;
 
 import io.takamaka.crypto.tkmsecurityprovider.pqc.crypto.qteslaround1.QTESLAPrivateKeyParameters;
 import io.takamaka.crypto.tkmsecurityprovider.util.adaptor.r1.QTR1KeyPairGenerator;
+import io.takamaka.crypto.tkmsecurityprovider.util.adaptor.r2.QTR2KeyPairGenerator;
+import io.takamaka.crypto.tkmsecurityprovider.util.adaptor.r2.SeededRandomTestOnly;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;

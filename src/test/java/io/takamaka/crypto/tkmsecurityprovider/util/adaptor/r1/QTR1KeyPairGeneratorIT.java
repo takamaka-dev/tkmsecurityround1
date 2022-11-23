@@ -30,6 +30,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.platform.commons.function.Try.success;
 
 /**
  *
@@ -72,8 +73,7 @@ public class QTR1KeyPairGeneratorIT {
         String privateKeyString = new String(encode, StandardCharsets.UTF_8);
         System.out.println(privateKeyString);
 //        assertArrayEquals(decode, actual);
-        assertArrayEquals(q.getSecret(), qteslaPrivateKeyParameters.getSecret());
-        assertEquals(q.getSecurityCategory(), qteslaPrivateKeyParameters.getSecurityCategory());
+        
         
 //        pkPair = new AsymmetricCipherKeyPair(edPublicKey, null);
     }
@@ -94,120 +94,121 @@ public class QTR1KeyPairGeneratorIT {
      * Test of internalJavaKeypairFromBCPostQuantumKeyPair method, of class QTR1KeyPairGenerator.
      * @throws java.io.IOException
      */
-    @Test
-    public void testInternalJavaKeypairFromBCPostQuantumKeyPair() throws IOException {
-        System.out.println("internalJavaKeypairFromBCPostQuantumKeyPair");
-        
-        AsymmetricCipherKeyPair testAsymmetricCipherKeyPair = QTR1KeyPairGenerator.getKeyPair(seededRandomTestOnly);
-        AsymmetricKeyParameter aPrivate = testAsymmetricCipherKeyPair.getPrivate();
-        QTESLAPrivateKeyParameters testQTESLAPrivateKeyParameter = (QTESLAPrivateKeyParameters) aPrivate;
-        KeyPair expResult = null;
-        KeyPair result = QTR2KeyPairGenerator.internalJavaKeypairFromBCPostQuantumKeyPair(pkPair);
-        System.out.println(result);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of internalSigner method, of class QTR2KeyPairGenerator.
-     */
-    @Test
-    public void testInternalSigner() throws Exception {
-        System.out.println("internalSigner");
-        PrivateKey priv = null;
-        byte[] data = null;
-        byte[] expResult = null;
-        byte[] result = QTR2KeyPairGenerator.internalSigner(priv, data);
-        assertArrayEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of internalVerifier method, of class QTR2KeyPairGenerator.
-     */
-    @Test
-    public void testInternalVerifier() throws Exception {
-        System.out.println("internalVerifier");
-        PublicKey pub = null;
-        byte[] signature = null;
-        byte[] data = null;
-        boolean expResult = false;
-        boolean result = QTR2KeyPairGenerator.internalVerifier(pub, signature, data);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getSignatureInstance method, of class QTR2KeyPairGenerator.
-     */
-    @Test
-    public void testGetSignatureInstance() throws Exception {
-        System.out.println("getSignatureInstance");
-        Signature expResult = null;
-        Signature result = QTR2KeyPairGenerator.getSignatureInstance();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of internalPublicKeyFromEncoded method, of class QTR2KeyPairGenerator.
-     */
-    @Test
-    public void testInternalPublicKeyFromEncoded() throws Exception {
-        System.out.println("internalPublicKeyFromEncoded");
-        byte[] encoded = null;
-        PublicKey expResult = null;
-        PublicKey result = QTR2KeyPairGenerator.internalPublicKeyFromEncoded(encoded);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of publicKeyFromEncoded method, of class QTR2KeyPairGenerator.
-     */
-    @Test
-    public void testPublicKeyFromEncoded() throws Exception {
-        System.out.println("publicKeyFromEncoded");
-        byte[] encoded = null;
-        QTR2KeyPairGenerator instance = new QTR2KeyPairGenerator();
-        PublicKey expResult = null;
-        PublicKey result = instance.publicKeyFromEncoded(encoded);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getGenerator method, of class QTR2KeyPairGenerator.
-     */
-    @Test
-    public void testGetGenerator() {
-        System.out.println("getGenerator");
-        QTESLAKeyPairGenerator expResult = null;
-        QTESLAKeyPairGenerator result = QTR2KeyPairGenerator.getGenerator();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getGenerationParameters method, of class QTR2KeyPairGenerator.
-     */
-    @Test
-    public void testGetGenerationParameters() {
-        System.out.println("getGenerationParameters");
-        SecureRandom sr = null;
-        QTESLAKeyGenerationParameters expResult = null;
-        QTESLAKeyGenerationParameters result = QTR2KeyPairGenerator.getGenerationParameters(sr);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+//    @Test
+//    public void testInternalJavaKeypairFromBCPostQuantumKeyPair() throws IOException {
+//        System.out.println("internalJavaKeypairFromBCPostQuantumKeyPair");
+//        
+//        AsymmetricCipherKeyPair testAsymmetricCipherKeyPair = QTR1KeyPairGenerator.getKeyPair(seededRandomTestOnly);
+//        AsymmetricKeyParameter aPrivate = testAsymmetricCipherKeyPair.getPrivate();
+//        QTESLAPrivateKeyParameters testQTESLAPrivateKeyParameter = (QTESLAPrivateKeyParameters) aPrivate;
+//        
+//        KeyPair expResult = null;
+//        KeyPair result = QTR2KeyPairGenerator.internalJavaKeypairFromBCPostQuantumKeyPair(pkPair);
+//        System.out.println(result);
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
+//
+//    /**
+//     * Test of internalSigner method, of class QTR2KeyPairGenerator.
+//     */
+//    @Test
+//    public void testInternalSigner() throws Exception {
+//        System.out.println("internalSigner");
+//        PrivateKey priv = null;
+//        byte[] data = null;
+//        byte[] expResult = null;
+//        byte[] result = QTR2KeyPairGenerator.internalSigner(priv, data);
+//        assertArrayEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
+//
+//    /**
+//     * Test of internalVerifier method, of class QTR2KeyPairGenerator.
+//     */
+//    @Test
+//    public void testInternalVerifier() throws Exception {
+//        System.out.println("internalVerifier");
+//        PublicKey pub = null;
+//        byte[] signature = null;
+//        byte[] data = null;
+//        boolean expResult = false;
+//        boolean result = QTR2KeyPairGenerator.internalVerifier(pub, signature, data);
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
+//
+//    /**
+//     * Test of getSignatureInstance method, of class QTR2KeyPairGenerator.
+//     */
+//    @Test
+//    public void testGetSignatureInstance() throws Exception {
+//        System.out.println("getSignatureInstance");
+//        Signature expResult = null;
+//        Signature result = QTR2KeyPairGenerator.getSignatureInstance();
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
+//
+//    /**
+//     * Test of internalPublicKeyFromEncoded method, of class QTR2KeyPairGenerator.
+//     */
+//    @Test
+//    public void testInternalPublicKeyFromEncoded() throws Exception {
+//        System.out.println("internalPublicKeyFromEncoded");
+//        byte[] encoded = null;
+//        PublicKey expResult = null;
+//        PublicKey result = QTR2KeyPairGenerator.internalPublicKeyFromEncoded(encoded);
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
+//
+//    /**
+//     * Test of publicKeyFromEncoded method, of class QTR2KeyPairGenerator.
+//     */
+//    @Test
+//    public void testPublicKeyFromEncoded() throws Exception {
+//        System.out.println("publicKeyFromEncoded");
+//        byte[] encoded = null;
+//        QTR2KeyPairGenerator instance = new QTR2KeyPairGenerator();
+//        PublicKey expResult = null;
+//        PublicKey result = instance.publicKeyFromEncoded(encoded);
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
+//
+//    /**
+//     * Test of getGenerator method, of class QTR2KeyPairGenerator.
+//     */
+//    @Test
+//    public void testGetGenerator() {
+//        System.out.println("getGenerator");
+//        QTESLAKeyPairGenerator expResult = null;
+//        QTESLAKeyPairGenerator result = QTR2KeyPairGenerator.getGenerator();
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
+//
+//    /**
+//     * Test of getGenerationParameters method, of class QTR2KeyPairGenerator.
+//     */
+//    @Test
+//    public void testGetGenerationParameters() {
+//        System.out.println("getGenerationParameters");
+//        SecureRandom sr = null;
+//        QTESLAKeyGenerationParameters expResult = null;
+//        QTESLAKeyGenerationParameters result = QTR2KeyPairGenerator.getGenerationParameters(sr);
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
 
     /**
      * Test of getKeyPair method, of class QTR2KeyPairGenerator.
@@ -215,40 +216,60 @@ public class QTR1KeyPairGeneratorIT {
     @Test
     public void testGetKeyPair() {
         System.out.println("getKeyPair");
-        SecureRandom sr = null;
-        AsymmetricCipherKeyPair expResult = null;
-        AsymmetricCipherKeyPair result = QTR2KeyPairGenerator.getKeyPair(sr);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+        
+        SeededRandomTestOnly srto = new SeededRandomTestOnly(seed, scope, 1);
+        //SecureRandom sr = new SecureRandom();
+        //pkPair = QTR1KeyPairGenerator.getKeyPair(seededRandomTestOnly);
+        AsymmetricCipherKeyPair pkPairTest = QTR1KeyPairGenerator.getKeyPair(srto);
+        AsymmetricKeyParameter aPrivate = pkPairTest.getPrivate();
+        QTESLAPrivateKeyParameters qQTESLAPrivateKeyParameters = (QTESLAPrivateKeyParameters) aPrivate;
+        byte[] secret = qQTESLAPrivateKeyParameters.getSecret();
+        int securityCategory = qQTESLAPrivateKeyParameters.getSecurityCategory();
+        QTESLAPrivateKeyParameters qteslaPrivateKeyParameters = new QTESLAPrivateKeyParameters(securityCategory, secret);
+        Base64.Encoder encoder = Base64.getEncoder();
+        byte[] encode = encoder.encode(secret);
+        String privateKeyString = new String(encode, StandardCharsets.UTF_8);
+        System.out.println(privateKeyString);
+        assertArrayEquals(QTR1KeyPairGeneratorIT.q.getSecret(), qteslaPrivateKeyParameters.getSecret());
+        assertEquals(QTR1KeyPairGeneratorIT.q.getSecurityCategory(), qteslaPrivateKeyParameters.getSecurityCategory());
+        
+        Base64.Decoder decoder = Base64.getDecoder();
+        byte[] decode = decoder.decode(qtk1provableSecure_r1.getBytes(StandardCharsets.UTF_8));
+        byte[] decodedSecret = decoder.decode(privateKeyString.getBytes(StandardCharsets.UTF_8));
+        
+        assertArrayEquals(decode, decodedSecret);
 
-    /**
-     * Test of getStringPublicKey method, of class QTR2KeyPairGenerator.
-     */
-    @Test
-    public void testGetStringPublicKey() throws Exception {
-        System.out.println("getStringPublicKey");
-        AsymmetricCipherKeyPair ackp = null;
-        String expResult = "";
-        String result = QTR2KeyPairGenerator.getStringPublicKey(ackp);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //decode
+        
+        success("The test case is successfull");
     }
-
-    /**
-     * Test of getBytePublicKey method, of class QTR2KeyPairGenerator.
-     */
-    @Test
-    public void testGetBytePublicKey() throws Exception {
-        System.out.println("getBytePublicKey");
-        AsymmetricCipherKeyPair ackp = null;
-        byte[] expResult = null;
-        byte[] result = QTR2KeyPairGenerator.getBytePublicKey(ackp);
-        assertArrayEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+//
+//    /**
+//     * Test of getStringPublicKey method, of class QTR2KeyPairGenerator.
+//     */
+//    @Test
+//    public void testGetStringPublicKey() throws Exception {
+//        System.out.println("getStringPublicKey");
+//        AsymmetricCipherKeyPair ackp = null;
+//        String expResult = "";
+//        String result = QTR2KeyPairGenerator.getStringPublicKey(ackp);
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
+//
+//    /**
+//     * Test of getBytePublicKey method, of class QTR2KeyPairGenerator.
+//     */
+//    @Test
+//    public void testGetBytePublicKey() throws Exception {
+//        System.out.println("getBytePublicKey");
+//        AsymmetricCipherKeyPair ackp = null;
+//        byte[] expResult = null;
+//        byte[] result = QTR2KeyPairGenerator.getBytePublicKey(ackp);
+//        assertArrayEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
     
 }

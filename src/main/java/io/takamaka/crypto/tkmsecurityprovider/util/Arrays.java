@@ -210,6 +210,7 @@ public final class Arrays {
     /**
      * @deprecated Use {@link #fill(byte[], int, int, byte)} instead.
      */
+    @Deprecated
     public static void fill(byte[] a, int fromIndex, byte val) {
         fill(a, fromIndex, a.length, val);
     }
@@ -233,6 +234,7 @@ public final class Arrays {
     /**
      * @deprecated Use {@link #fill(int[], int, int, int)} instead.
      */
+    @Deprecated
     public static void fill(int[] a, int fromIndex, int val) {
         java.util.Arrays.fill(a, fromIndex, a.length, val);
     }
@@ -248,6 +250,7 @@ public final class Arrays {
     /**
      * @deprecated Use {@link #fill(long[], int, int, long)} instead.
      */
+    @Deprecated
     public static void fill(long[] a, int fromIndex, long val) {
         java.util.Arrays.fill(a, fromIndex, a.length, val);
     }
@@ -271,6 +274,7 @@ public final class Arrays {
     /**
      * @deprecated Use {@link #fill(short[], int, int, short)} instead.
      */
+    @Deprecated
     public static void fill(short[] a, int fromIndex, short val) {
         java.util.Arrays.fill(a, fromIndex, a.length, val);
     }

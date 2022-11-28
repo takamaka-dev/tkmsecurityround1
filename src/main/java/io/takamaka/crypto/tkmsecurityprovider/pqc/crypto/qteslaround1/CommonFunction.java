@@ -168,8 +168,6 @@ public class CommonFunction {
      * @param store Destination Array
      * @param storeOffset Starting position
      * @param number Source Number
-     *
-     * @return none
      ****************************************************************************
      */
     public static void store16(byte[] store, int storeOffset, short number) {
@@ -202,8 +200,6 @@ public class CommonFunction {
      * @param store Destination Array
      * @param storeOffset Starting Position
      * @param number:	Source Number
-     *
-     * @return none
      ******************************************************************************
      */
     public static void store32(byte[] store, int storeOffset, int number) {
@@ -236,8 +232,6 @@ public class CommonFunction {
      * @param store Destination Array
      * @param storeOffset Starting Position
      * @param number Source Number
-     *
-     * @return none
      ***************************************************************************
      */
     public static void store64(byte[] store, int storeOffset, long number) {

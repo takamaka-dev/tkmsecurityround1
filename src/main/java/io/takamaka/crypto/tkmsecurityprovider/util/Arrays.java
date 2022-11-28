@@ -882,10 +882,12 @@ public final class Arrays {
             this.dataArray = dataArray;
         }
 
+        @Override
         public boolean hasNext() {
             return position < dataArray.length;
         }
 
+        @Override
         public T next() {
             if (position == dataArray.length) {
                 throw new NoSuchElementException("Out of elements: " + position);
@@ -894,6 +896,7 @@ public final class Arrays {
             return dataArray[position++];
         }
 
+        @Override
         public void remove() {
             throw new UnsupportedOperationException("Cannot remove element from an Array.");
         }

@@ -29,7 +29,7 @@ package io.takamaka.crypto;
  */
 public class LICENSE
 {
-    public static final String licenseText =
+    public static final String LICENSE_TEXT =
     "The Takamaka Security Provider. (https://takamaka.io/) \n"
       +"This is just a wrapper of the Bouncy castle library v1.67. The creation \n"
       +"of this library has only the aim of maintaining backwards compatibility \n"
@@ -66,6 +66,6 @@ public class LICENSE
     public static void main(
         String[]    args)
     {
-        System.out.println(licenseText);
+        System.out.println(LICENSE_TEXT);
     }
 }

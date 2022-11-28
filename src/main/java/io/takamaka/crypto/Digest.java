@@ -39,11 +39,12 @@ public interface Digest {
     public void update(byte[] in, int inOff, int len);
 
     /**
-     * close the digest, producing the final digest value. The doFinal call
+     * close the digest, producing the final digest value.The doFinal call
      * leaves the digest reset.
      *
      * @param out the array the digest is to be copied into.
      * @param outOff the offset into the out array the digest is to start at.
+     * @return The doFinal call leaves the digest reset
      */
     public int doFinal(byte[] out, int outOff);
 

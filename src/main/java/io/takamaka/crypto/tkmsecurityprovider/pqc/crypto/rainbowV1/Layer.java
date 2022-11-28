@@ -69,6 +69,8 @@ public class Layer {
      * This function generates the coefficients of all polynomials in this layer
      * at random using random generator.
      *
+     * @param vi number of vinegars in this layer
+     * @param viNext number of vinegars in next layer
      * @param sr the random generator which is to be used
      */
     public Layer(int vi, int viNext, SecureRandom sr) {
@@ -261,6 +263,7 @@ public class Layer {
      * @param other the other object
      * @return the result of the comparison
      */
+    @Override
     public boolean equals(Object other) {
         if (other == null || !(other instanceof Layer)) {
             return false;
@@ -276,6 +279,7 @@ public class Layer {
                 && RainbowUtil.equals(coeff_eta, otherLayer.getCoeffEta());
     }
 
+    @Override
     public int hashCode() {
         int hash = vi;
         hash = hash * 37 + viNext;

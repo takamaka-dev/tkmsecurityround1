@@ -5,6 +5,29 @@
     <artifactId>TKMSecurityProvider</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <id>gio-ant</id>
+            <name>Giovanni Antino</name>
+            <email>giovanni.antino@takamaka.io</email>
+        </developer>
+        <developer>
+            <id>takamaka-dev</id>
+            <name>Takamaka Dev</name>
+            <email>tech@takamaka.io</email>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:git@github.com:dsibilio/badge-maker.git</connection>
+        <developerConnection>scm:git:ssh://github.com:dsibilio/badge-maker.git</developerConnection>
+        <url>https://github.com/dsibilio/badge-maker/tree/main</url>
+    </scm>
     <build>
         <resources>
             <resource>

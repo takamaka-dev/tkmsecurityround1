@@ -24,9 +24,9 @@
         </developer>
     </developers>
     <scm>
-        <connection>scm:git:git@github.com:dsibilio/badge-maker.git</connection>
-        <developerConnection>scm:git:ssh://github.com:dsibilio/badge-maker.git</developerConnection>
-        <url>https://github.com/dsibilio/badge-maker/tree/main</url>
+        <connection>scm:git@github.com:takamaka-dev/tkmsecurityround1.git</connection>
+        <developerConnection>scm:git@github.com:takamaka-dev/tkmsecurityround1.git</developerConnection>
+        <url>https://github.com/takamaka-dev/tkmsecurityround1/tree/main</url>
     </scm>
     <build>
         <resources>
@@ -44,7 +44,7 @@
                     <archive>
                         <manifest>
                             <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
-                            <!--<mainClass>com.h2tcoin.takamakachain.utils.simpleWallet.SimpleWallet</mainClass>-->
+                            
                         </manifest>
                     </archive>
                 </configuration>
@@ -54,7 +54,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <!--<mainClass>com.h2tcoin.takamakachain.utils.simpleWallet.SimpleWallet</mainClass>-->
+                            
                         </manifest>
                     </archive>
                     <descriptorRefs>

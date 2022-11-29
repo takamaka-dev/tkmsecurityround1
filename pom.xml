@@ -29,6 +29,11 @@
             <email>giovanni.antino@takamaka.io</email>
         </developer>
         <developer>
+            <id>zaikeneim</id>
+            <name>Alessandro Pasi</name>
+            <email>alessandro.pasi@takamaka.io</email>
+        </developer>
+        <developer>
             <id>takamaka-dev</id>
             <name>Takamaka Dev</name>
             <email>tech@takamaka.io</email>

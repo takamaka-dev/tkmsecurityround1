@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    
+    <!-- More Project Information -->
+    <name>Takamaka Security Provider Round 1</name>
+    <description>This package contains an old version of the qtesla algorithm from the bouncycastle library. Changes have been introduced in the current library that make the old keys incompatible with the new ones. The purpose of this package is to maintain, within the takamaka.io software, compatibility with the old implementation of signature keys. </description>
+    <url>https://github.com/takamaka-dev/tkmsecurityround1</url>
+    <inceptionYear>2020</inceptionYear>
+    <organization>
+        <name>AiliA SA</name>
+        <url>https://takamaka.io</url>
+    </organization>
+   
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.takamaka.crypto</groupId>
     <artifactId>TKMSecurityProvider</artifactId>

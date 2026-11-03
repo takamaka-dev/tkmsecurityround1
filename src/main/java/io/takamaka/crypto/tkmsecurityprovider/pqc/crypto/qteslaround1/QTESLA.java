@@ -858,6 +858,19 @@ public class QTESLA
             for (int j = 0; j < n; j++)
             {
 
+                /*
+                 * Reduce T Into [0, q) From BOTH Sides (Takamaka fix, 2026-11-03).
+                 *
+                 * BouncyCastle 1.61 round 1 (the code this file was taken from) reduced from above only: a coefficient
+                 * that came out of the lazy Montgomery multiplication plus the error polynomial as a small NEGATIVE value
+                 * (observed: -948848 on one of ~90,000 keys) was packed with its sign bits into the public key, so the
+                 * public key did not match the private key and every signature failed to verify. Round 2 reduces both
+                 * sides. Adding q when T < 0 changes nothing for a coefficient already in [0, q), so every key pair the
+                 * old code produced correctly is byte-identical; only the formerly broken ones change.
+                 */
+                /* If T < 0 Then Add q */
+                T[n * i + j] += (T[n * i + j] >> 63) & q;
+                /* If T >= q Then Subtract q */
                 mask = (q - T[n * i + j]) >> 63;
                 T[n * i + j] -= (q & mask);
 
